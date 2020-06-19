@@ -13,22 +13,17 @@ if(edad === 18){
 //conditin ? true : false;
 
 /**Exercise Plan Piedra o Tijera */
-var value = prompt("Bienvenido a tu juego preferido escoje:\n"
-    "1 = Piedra\n"
-    "2 = Tijera\n"
-    "3 = Papel\n"
-    "Elige: ");
-if (value === 1) {
-    console.log("Escogistes Piedra");
-} else if (value === 2) {
-    console.log("Escogistes Tijera");
-} else if (value === 3) {
-    console.log("Escogistes Papel");
-} else {
-    console.log("Valor Invalido, Intente Nuevamente");
-}
 
 function juego(value) {
+    if (value === 1) {
+        console.log("Escogistes Piedra");
+    } else if (value === 2) {
+        console.log("Escogistes Tijera");
+    } else if (value === 3) {
+        console.log("Escogistes Papel");
+    } else {
+        console.log("Valor Invalido, Intente Nuevamente");
+    }
     var value_pc = Math.round(Math.random() * 3);
     if (value_pc === 1) {
         console.log("La Pc escogio Piedra");
@@ -46,3 +41,9 @@ function juego(value) {
         console.log("!Has perdido¡ ):");
     }
 }
+var value = prompt("Bienvenido a tu juego preferido escoje:\n"
+    "1 = Piedra\n"
+    "2 = Tijera\n"
+    "3 = Papel\n"
+    "Elige: ");
+juego(value);
