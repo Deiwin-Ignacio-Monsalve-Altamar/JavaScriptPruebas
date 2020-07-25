@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Titulo de la pagina -->
+
+<head>
+    <meta charset="utf-8" />
+    <title>Deiwin Ignacio Monsalve</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="icon" href="images/dma.png">
+</head>
+
+<body>
+    <!--Cabezera donde ira toda mi informacion-->
+    <header class="header">
+        <!--Lista de navegacion-->
+        <div>
+            <figure class="logo">
+                <img src="images/dma.png" alt="Logo de http://dma.com">
+            </figure>
+            <nav class="menu">
+                <!--Lista ordenada aparace con los numeros-->
+                <ol>
+                    <li>
+                        <!--Ancla donde nos envia otra informaciom-->
+                        <a href="#portafolio">Portafolio</a>
+                    </li>
+                    <li>
+                        <a href="#eventos">Experiencia</a>
+                    </li>
+                    <li>
+                        <a href="#contacto">Trabajemos Juntos</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+    <!--Complemento de mi pagina para informaciones principales-->
+    <section class="hero">
+        <!--br salto de linea-->
+        <h1>Hola! Soy <strong>Deiwin Ignacio</strong> <br> Desarrollador <strong>Web</strong> con<br> pasión por el <strong>Aprendizaje</strong></h1>
+        <img src="images/logo.jpg" width="500" height="300" alt="Imagrn princial del sitio">
+    </section>
+    <section id="portafolio" class="portfolio">
+        <!--Ingresando portafolio con proyectos realizado y utilizando strong prar resaltar palabras-->
+        <h2>Portafolio (Proyectos Destacados)</h2>
+        <!--Article etiqueta independiente -->
+        <article class="project">
+            <h3 class="project__title">Console de Shell</h3>
+            <h6 class="project-course">C puro</h6>
+            <p class="project-date"><small><strong>Fecha</strong> 01/07/2007</small></p>
+            <p class="project-url"><small><strong>Puedes verlo en mi GitHub</strong> 01/07/2007</small></p>
+            <figure class="project-image">
+                <img src="" alt="Todavia nada">
+            </figure>
+        </article>
+    </section>
+    <section id="eventos">
+        <h2>Mas sobre mi Experiencia</h2>
+        <article class="event">
+            <figure class="event-imageContainer">
+                <img class="event-image" src="images/conf.jpg" width="500">
+            </figure>
+            <h3 class="event-title">Conf AngularJs</h3>
+            <p class="event descript">Evento grande</p>
+            <a class="event-url" href="https://www.youtube.com/watch?v=kNZKeJKdsTo" target="_blank">Ver Plactica</a>
+        </article>
+    </section>
+    <section id="contacto" class="contact">
+        <form action="/suscripcion/" class="form-email">
+            <h3>¿Creamos algo juntos?</h3>
+            <input type="text" placeholder="Déjame tu email" id="email">
+            <button>Enviar</button>
+        </form>
+
+    </section>
+    <!--Pie de pagina-->
+    <footer class="footer">Footer</footer>
+
+</body>
+
+</html>
