@@ -7,9 +7,11 @@ class Player
         Player();
 
         void CallInput();
+        void ResetToPosition();
     
+        int x, y;
+        int Lastx, Lasty;
     protected:
-
     private:
     
 };
