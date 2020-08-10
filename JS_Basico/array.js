@@ -16,12 +16,12 @@ console.log(frutas[0]); // Los arrays inician en "0"
 
 
 // .push();
-
+/**El método .push() nos permite agregar uno o más elementos al final de un array. */
 var masFrutas = frutas.push("Uvas"); // Esté metodo añadirá "Uvas" añ final del array
 console.log(frutas);
 
 // .pop();
-
+/**Eliminará el último elemento de un array*/
 var utlimo = frutas.pop("Uvas"); // Eliminará "Uvas" del final 
 console.log(frutas);
 
@@ -31,7 +31,7 @@ var nuevaLogitud = frutas.unshift("Uvas"); // Añade "Uvas" al inicio
 console.log(frutas);
 
 // shift()
-
+/**Elimina el primer elemento de un array, es decir, elimina el elemento que esté en el índice 0*/
 var borrarFruta = frutas.shift("Manzana"); // Elimina "Manzana" del inico
 console.log(frutas);
 
