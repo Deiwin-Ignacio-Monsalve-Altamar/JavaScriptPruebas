@@ -1,0 +1,27 @@
+{% extends 'bootstrap/base.html' %} {% block head %} {{ super() }}
+
+<title>
+    {% block title %}Flask Platzi |{% endblock %}
+</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}"> {% endblock %}
+
+<!-- COntenido de body -->
+{% block body %}
+
+<!-- Bloque de la barra nav -->
+{% block navbar %}
+
+<!-- Llamando el html del bar -->
+{% include 'navbar.html' %} {% endblock %}
+
+<!-- Imprimendo nuestro mensaje html -->
+{% for message in get_flashed_messages() %}
+<div class="alert alert-success alert-dismissible">
+    <button type="button" data-dismiss="alert" class="close">&times;</button> {{ message }}
+</div>
+{% endfor %}
+
+<!-- Contenido digamos de la section -->
+{% block content %} {% endblock %}
+<!-- Importando mudulos para cerrar el elemento de aviso -->
+{% block scripts %} {{ super()}} {% endblock %} {% endblock %}
