@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><code>This</code> se refiere a un objeto</h1>
+    <script>
+        //This en el scope a global
+        console.log(`this es : {this}`);
+
+        //This en el scope de una funncion
+        function whoIsThis(){
+            return this;
+        }
+        //Va a parecer windows
+        console.log(`whoIsThis(): ${whoIsThis()}`);
+
+        //This en el scope de una funcion en strict mode
+        
+        function whoIsThis(){
+            //EL motor ayuda a que el this sea de la funcion
+            "use strict";
+            return this;
+        }
+        console.log(`whoIsThis(): ${whoIsThis()}`);
+
+        //This en el contexto de un objeto
+        const person = {
+            name: 'Deiwin',
+            saludar: function(){
+                console.log(`Hola Soy ${this.name}`)
+            }
+        }
+
+        person.saludar();
+
+        //this cuando sacamos a una funcion de un objeto
+        const accion = person.saludar;
+        accion()
+
+        //This en uncontexto de clase
+        function Person(name ){
+            this.name = name;
+        }
+
+        Person.prototype.saludar = function(){
+            console.log(`Me llamo ${this.name}`);
+        }
+
+        const angela = new Person('Anagela');
+        angela.saludar();
+    </script>
+</body>
+</html>
