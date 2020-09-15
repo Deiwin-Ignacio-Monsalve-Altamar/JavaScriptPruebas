@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>PlatziMediaPlayer.js</title>
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="./assets/index.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>PlatziMediaPlayer.js</h1>
+      <p>An extensible media player.</p>
+    </header>
+
+    <main class="container">
+      <video class="movie">
+        <source src="./assets/BigBuckBunny.mp4" />
+      </video>
+
+      <button id="playButton">Play/Pause</button>
+      <button id="muteButton">Mute/Unmute</button>
+    </main>
+
+    <script type="module" src="/assets/index.ts"></script>
+    <!--<script>
+        /*Tenemos un vídeo que debemos manipular, lo vamos
+        a hacer con querySelector(""), a este tenemos
+        que pasarlo un elemento, en este caso será video,
+        es el único elemento video en nuestro HTML.
+        Tambien debemos traer nuestro botón con `querySelector``.*/
+       /*    const video = document.querySelector("video");
+        const button = document.querySelector("button");
+
+        function MediaPlayer(config){
+            this.media = config.el
+        }*/
+        /*Ahora nuestro código no es muy extensible,
+        vamos a lograr esto usando prototipado.
+        Para hacerlo extensible se pueden usar clases,
+        pero en este caso usaremos protitype*/
+        /*MediaPlayer.prototype.play = function(){
+            funcionalidad de pausa y play con el mismo botón,
+            debemos condicionar la función play
+            if(this.media.paused)
+                this.media.play();
+            else
+                this.media.pause();
+        }*/
+        /*instancia del prototipo mediaPlayer que creamos.*/
+        /*const player = new MediaPlayer({ el: video});*/
+
+        //Cuando le demos click a nuestro botón queremos que el vídeo se reproduzca.
+        /*button.onclick = () => player.play();*/
+    </script>-->
+  </body>
+</html>
