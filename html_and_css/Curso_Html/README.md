@@ -68,3 +68,121 @@ Los !important estarán por encima de los demás estilos. Sin embargo, son mala 
 Los estilos embebidos en el HTML, es decir inline styles están por encima de las clases y IDs. Sin embargo, también se deberían evitar.
 Los IDs están por encima de las clases. Los IDs son específicos, si se usa uno en un archivo HTML ya no se podrá repetir más en ese mismo archivo. Mientras que las clases si se pueden repetir en cualquier elemento.
 Un estilo de etiqueta es el último valor que el navegador tiene en cuenta antes de tomar los estilos por defecto de esa etiqueta. Los estilos de etiqueta son los que menos peso tienen.
+
+
+## Recuerden.
+-   1- Evitar usar !important
+-   2- Evitar usar estilos embebidos (Estilos en la etiqueta html).
+-   3- Evitar usar ID para dar estilos en CSS por que tienen mas peso y dan conflictos.
+
+Si usan Visual Studio Code pueden ver que peso tiene el o los selectores que están usando.
+Solo pongan el mouse sobre los selectores y podrán verlo de la siguiente manera (ID, Class, Elemento HTML)
+
+### Selectores de Hermanos Adyacentes
+Se hace referencia a este selector como selector adyacente o selector del próximo hermano. Sólo seleccionará un elemento especificado que esté inmediatamente después de otro elemento especificado.
+
+Sintaxis:
+```
+elemento_anterior + elemento_afectado { estilos }
+```
+
+### General Sibling
+
+Lo que estamos haciendo es un ok como hermano general vamos a modificar todas las etiquetas de párrafo que tengan como hermano general un h2. De forma general existen párrafos juntos con etiquetas h2 eso es lo que hace sibling en general va a aplicarle el estilo siempre y cuando existan a la misma línea como hermanos esa etiqueta que tu estas modificando con la tilde o el signo equivalencia.
+
+### The child combinator (>)
+se coloca entre dos selectores CSS. Solo coincide con los elementos que coinciden con el segundo selector que son hijos directos de los elementos que coinciden con el primero.
+.
+https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator
+.
+
+### The descendant combinator
+típicamente representado por un único carácter de espacio ( ), combina dos selectores de modo que los elementos que coinciden con el segundo selector se seleccionan si tienen un elemento antepasado (padre, padre del padre, padre del padre, etc.) que coincida con el primer selector. Los selectores que utilizan un combinador descendiente se denominan selectores descendientes .
+.
+https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator
+.
+
+(Combinator css)[https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators]
+
+### Medidas en Css
+
+#### medida absoluta:
+el valor de este no cambia y siempre sera el mismo asi la pagina cambie su tamaño, las medidas absolutas son:
+.
+-   mm = milimetros
+-   cm = centimetros
+-   in = pulgada
+-   pc = picas
+-   px = pixel
+
+
+####   las medidas relativas:
+estas medidas heredan el tamaño o se basan en algun tamaño que se alla seleccionado y el valor ira cambiando segun si la pagina cambia de tamaño, las medidas relativas son :
+-   %
+Esta medida se refiere al porcentaje de su tamaño original (dado por html(puede ser modificado))
+-   em
+Esta medida es relativa a su padre donde 1em es exactamente igual a su padre, llegando hasta el padre de todos html que tiene medidas por defecto , usar esta medida puede llegar a usar complicado por lo que no es tan recomendada
+-   rem
+Esta es la medida más usada ya que esta es la mas practica, esta siempre referencia a una la medida que esté en html , es similar al porcentaje
+-   vh y vw
+Esta medida es relativa al dispositivo, vh es la medida de la altura del dispositivo y vw la anchura. Se utiliza como 100vw o 100vh siendo la pantalla completa
+
+
+##### Medida em
+es un acronimo de elemento y lo que hace es tomar el tamaño de fuente que tenga el padre directo ejemplo:
+```
+.container {
+   font-size: 20px
+   }
+
+.container div {
+    font-size: 2em
+   }
+```
+aqui los el tamaño del div que esta dentro de la clase container tenda un tamaño de 40px, ya que
+.
+1em = 20px
+.
+y como estamos asignandole 2 em seria como 20px + 20px
+.
+y si por ejemplo tenemos el siguiente caso :
+```
+.container {
+   font-size: 20px
+   }
+
+.container div {
+    font-size: 2em
+   }
+
+.container div p {
+   font-size: 1.5em
+   }
+```
+a continuacion veremos que la etiqueta p tendra un tamaño de fuente de 60px
+ya que toma como referencia el tamaño de su padre ( 40px ) y haria la siguiente operacion 40*1.5 que es igual a 60, es por eso que la etiqueta p tomo el valor de 60px
+
+##### Medidas REM
+funciona igual que el em, con la diferencia que es relativo al valor de la fuente del elemento html, y no tiene en cuenta el valor heredado o del elemento que lo contiene.
+
+Por defecto el html viene con un tamaño de fuente de 16px asi que siempre
+.
+1 REM = 16PX
+.
+Si queremos aplicar rem de una forma mas sencilla para no tener que hacer tantos calculos asemos lo siguiente
+.
+vamos a reescribir en css nuestro html
+```
+html {
+      font-size: 62.5%; 
+     }
+```
+esto lo que hara es darle a el html un valor de 10px ya que 16px - 62.5% = 10px
+
+ahora si por ejemplo a una etiqueta le asignamos 2rem este hara referencia a 20px, o si por ejemplo le damos un valor de 1.5rem su valor sera de 15px
+
+##### Meidas VW AND VH
+Pero vw y vh sera una medida que dependerá del Viewport es decir del tamaño de la ventana del navegador.
+Del tamaño que el dispositivo dará.
+Recuerda que Width es el ancho y Height es el alto.
+Así que el tamaño que estos tengan como te comente dependerá del viewport que como ya te lo dije igual es el tamaño de tu ventana, en ese dispositivo donde veas dicha pagina 
