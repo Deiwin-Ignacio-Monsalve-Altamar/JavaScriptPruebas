@@ -1,0 +1,34 @@
+/**Hermano adyacentes*/
+/*Le stamos diciendo que le estilo a todo los parrafos que estan cerca de h2*/
+/* h2 + p{
+    color: red;
+} */
+
+/**general sibling combinator (~)*/
+/**separa dos selectores y coincide con el segundo elemento solo si sigue
+al primer elemento (aunque no necesariamente inmediatamente),
+y ambos son hijos del mismo elemento padre .*/
+/* h2 ~ p{
+    color: red;
+} */
+
+/*The child combinator (>) se coloca entre
+dos selectores CSS. Solo coincide con
+los elementos que coinciden con el segundo selector que
+son hijos directos de los elementos que coinciden con el primero.*/
+/* div > p{
+    color: red;
+} */
+
+/*The descendant combinator , típicamente representado
+por un único carácter de espacio ( ),
+combina dos selectores de modo que los elementos que
+coinciden con el segundo selector se seleccionan si
+tienen un elemento antepasado (padre, padre del padre,
+padre del padre, etc.) que coincida con el primer selector.
+Los selectores que utilizan un combinador
+descendiente se denominan selectores descendientes .*/
+div p {
+    color: red;
+}
+
