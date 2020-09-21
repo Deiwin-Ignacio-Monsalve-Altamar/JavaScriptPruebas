@@ -1,0 +1,36 @@
+/*Root es el punto de partido para declarar varivlaes*/
+:root {
+    --primary-color: #b4d2fb;
+    --secundary-color: #003467;
+    --header-size: 100vw;
+    --font: 1.8rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+header{
+    width: var(--header-size);
+    height: 15vh;
+    background-color: #003467;
+}
+main {
+    width: var(--header-size);
+    height: 70vh;
+    font-size: var(--font);
+}
+
+h1 {
+    font-size: 4rem;
+}
+footer {
+    width: var(--header-size);
+    height: 15vh;
+    background-color: #b4d2fb;
+}
