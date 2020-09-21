@@ -7,7 +7,7 @@ Tamaño máximo recomendado para una imágen:
 .
 Herramientas para optimizar imágenes:
 
-Tiny PNG: Comprime el tamaño de una imagen, para hacerla más ligera.
+(Tiny PNG)[https://tinypng.com/]: Comprime el tamaño de una imagen, para hacerla más ligera.
 
 Verefix: Elimina los metadatos de una imagen, para reducir su tamaño.
 
@@ -186,3 +186,58 @@ Pero vw y vh sera una medida que dependerá del Viewport es decir del tamaño de
 Del tamaño que el dispositivo dará.
 Recuerda que Width es el ancho y Height es el alto.
 Así que el tamaño que estos tengan como te comente dependerá del viewport que como ya te lo dije igual es el tamaño de tu ventana, en ese dispositivo donde veas dicha pagina 
+
+#### Display
+En esta clase vimos los 3 tipos de display Base.
+Los cuales fueron:
+
+Block: Estos toman el 100% del width, por lo que un elemento no puede posicionarse a un lado de el.
+Se le puede poner el width deseado, height deseado, añadir margin, padding sin problema. Pero recordando que ocupara este elemento todo el largo de una Fila por asi decirlo.
+
+Inline: Estos elementos solo ocuparan el ancho dependiento de su contenido. Por lo tanto estos elementos si permiten que si un elemento cabe a lado suyo, se posicione este ahi.
+Las *desventajas es que no se les puede modificar el width, height, ni colocar margin u padding tanto top, como bottom.
+
+inline-block: Este tiene la combinación de los 2 anteriores. Haciéndolo un mejor candidato para usarlo.
+Permite modificar su width, height, añadirle margin, padding sin problemas y lo mejor es que mientras que haya espacio a un lado suyo, este permitirá posicionar mas elementos ahi.
+
+------------------------------------------------------------------
+Etiquetas como p y div vienen por Default con un display:block
+Etiquetas como span viene por Default con un display:inline
+------------------------------------------------------------------
+
+display:flex; permite que los hijos de el elemento se desplieguen en la misma fila. flex-direction: row es por default flex-direction: row-reverse flex-direction: colum
+
+
+#### Variables (Custom properties)
+
+
+
+#### fonts
+La “puntitas al final” en la tipografias serif se llaman serifas.
+
+En realidad al grosor no se le dice muy gorditas 😁, se le dice peso de la tipografía.
+
+Tal como indicó Diego en la clase, no es bueno cargar muchas tipografías, normalmente se usan un máximo de 2 tipografías. Pero también es bueno no cargar muchos pesos distintos de una tipografía porque eso compromete el rendimiento, solo agrega a la importación los pesos que necesites.
+
+Para que el renderizado de la tipografía sea mas eficiente es buen practica colocarlo en el head antes de cargar el CSS, de modo que cuando el CSS cargue ya tiene disponible las tipografías.
+
+
+#### ¿Qué es Responsive Design?
+Son todas esas técnicas que usamos para adaptar nuestras aplicaciones web a la mayor cantidad de pantallas
+250px-Diseno-web-responsive-design.jpg
+Patrones en Reponsive Design:
+
+Mostly Fluid
+Colocación de columnas
+Layout shifter
+Tiny tweaks
+Off canvas
+Para mas información: https://mediaqueri.es
+
+Conceptos nuevos:
+
+Viewport: área visible del navegador
+Portrait: vertical
+Landscape: horizontal
+Mobile first: empezar un websit desde la menor resolución soportada
+Deskto first: empezar un websit desde la mayor resolución soportada
