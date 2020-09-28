@@ -241,3 +241,56 @@ Portrait: vertical
 Landscape: horizontal
 Mobile first: empezar un websit desde la menor resolución soportada
 Deskto first: empezar un websit desde la mayor resolución soportada
+
+## Estrategias de responsive: Mostly Fluid
+
+![https://developers.google.com/web/fundamentals/design-and-ux/responsive/imgs/mostly-fluid.svg](https://developers.google.com/web/fundamentals/design-and-ux/responsive/imgs/mostly-fluid.svg)
+
+Este tipo de estrategia se inicia con columnas y a medida que se crecen las pantallas, las columnas van siendo acomodadas. El archivo de estilos principal (styles.css) es el archivo que usaremos para trabajar nuestra primera versión responsive, es decir, la mobile. Luego iremos desarrollando las otras como *desktop.css* o *tablet.css*
+
+*Los media queries por buenas prácticas siempre deben ir al final de los estilos (en caso de que los tengamos en un solo archivo todos)
+
+## Layout Shifter CSS
+
+![https://developers.google.com/web/fundamentals/design-and-ux/responsive/imgs/layout-shifter.svg?hl=es](https://developers.google.com/web/fundamentals/design-and-ux/responsive/imgs/layout-shifter.svg?hl=es)
+
+Con esta estrategia o patrón de diseño responsive se notan más los cambios. Se inicia con un diseño modo vertical y a medida que se va creciendo la pantalla se empieza a acomodar los contenedores padres que se van renderizando con otros elementos dentro. La clave de este diseño es el reposicionamiento de contenedores y la colocación debajo de otras columnas.
+
+## Column Drop
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a711fe2e-143f-4f2a-97e2-ad77e1004471/column-drop.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a711fe2e-143f-4f2a-97e2-ad77e1004471/column-drop.png)
+
+En este patrón se tiene todo de forma vertical pero a la hora de que va creciendo el contenido empieza a arrojar los contenedores y los reposiciona a la línea principal, secundaria, etc... En este no se limita el crecimiento del container porque queremos que se estire por completo, que ocupe todo el ancho de la pantalla.
+
+### Enlace para profundizar en patrones de diseño web adaptable
+
+[Responsive Web Design Patterns | Web Fundamentals | Google Developers](https://developers.google.com/web/fundamentals/design-and-ux/responsive/patterns)
+
+## Buenas prácticas y ejemplos de responsive
+
+Existen muchos patrones de diseño responsive, algunos hasta incluyen JS pero los 3 vistos anteriormente son los más usados y reconocidos.
+
+Algunas de las buenas prácticas que debemos implementar a la hora de desarrollar en responsive son:
+
+- Siempre preparar los archivos CSS por brearpoink y no todos en una sola hojas de estilos.
+    - mobile.css/style.css
+    - tablet.css
+    - desktop.css
+- Trabajar con máximo 6 breakpoints. Debido a que se generará más código lo cual impactará en performance y no es buena práctica.
+
+-  TEXTOS
+Se recomienda fuertemente usar medidas relativas como rem, para poder incrementar el tamaño del texto para personas con visibilidad disminuida. Las opciones de navegador que cambian el tamaño de las fuentes no funcionan cuando las fuentes de html en el texto están en pixeles (px).
+
+### Accesibilidad
+
+“La accesibilidad es una acto de democratización al acceso de productos digitales, es la reivindicación del derecho de una persona con ciertas capacidades diferentes a acceder a las mismas plataformas.”
+
+-La semántica jugará un papel importante en la lectura de la plataforma por parte de un software
+-Es recomendable en cualquier situación el uso de medidas relativas (REM, EM) pues estas modificarán su tamaño en nuestra página cuando un usuario modifique el tamaño de las letras en la configuración de su navegador.
+-El uso de <label> en los formularios facilita la interacción de las personas y software con ellos. Por ejemplo al apretar la barra de espacio en un input que despligue un submenú, este se mostrará.
+-alt en las imágenes proporciona una descripción para un lector de contenido.
+-El atributo title puede ser usado en las etiquetas img y a para dar una descripción de sus contenidos al hacer hover.
+
+
+(Apuntes de CSS Y HTML)[https://www.notion.so/Curso-definitivo-de-HTML-y-CSS-7196d473c6b046d2b8de4a0edaa82dc6]
+(Ver pantallas o viemport)[https://www.mydevice.io/]
