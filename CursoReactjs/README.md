@@ -164,3 +164,80 @@ import { Redirect, Route } from "react-router-dom";
 
 Como podemos observar llamamos a nuestro componente 404 y luego utilizamos Redirect, el cual es un componente de React Router para hacer redirecciones; en este caso hacemos que todas las URL’s que no correspondan a alguna que hayamos declarado, sean redirigidas a MiComponente404.
 
+#### Introducción del ciclo de vida de un componente
+Cuando React renderiza los componentes decimos que entran en escena, cuando su estado cambia o recibe unos props diferentes se actualizan y cuando cambiamos de página se dice que se desmontan.
+
+- Montaje:
+
+Representa el momento donde se inserta el código del componente en el DOM.
+Se llaman tres métodos: constructor, render, componentDidMount.
+
+- Actualización:
+
+Ocurre cuando los props o el estado del componente cambian.
+Se llaman dos métodos: render, componentDidUpdate.
+
+- Desmontaje:
+
+Nos da la oportunidad de hacer limpieza de nuestro componente.
+Se llama un método: componentWillUnmount.
+
+```
+Constructor(props){
+	/*Este método se ejecuta cuando se instancia un componente. Nos permite definir el estado inicial del 		componente, hacer bind de métodos y definir propiedades internas en las que podemos guardar muchos datos diferente*/
+}
+
+componentWillMonunt(){
+	/*Este método se ejecuta cuando el componente se está por renderizar. En este punto es posible modificar el estado del componente sin causar una actualización (y por lo tanto no renderizar dos veces el componente).*/
+}
+
+render(){
+	/*En este momento de la fase de montado se van a tomar las propiedades, el estado y el contexto y se va a generar la UI inicial de este componente*/
+}
+
+componentDidMount(){
+	/*Este último método de la fase de montado se ejecuta una vez el componente se renderizó en el navegador y nos permite interactuar con el DOM o las otras APIs del navegador (geolocation, navigator, notificaciones, etc.).*/
+}
+
+componentWillReceiveProps(nextProps){
+	/*Este método se ejecuta inmediatamente después que el componente reciba nuevas propiedades. En este punto es posible actualizar el estado para que refleje el cambio de propiedades, ya sea reiniciando su valor inicial o cambiándolo por uno nuevo.*/
+}
+
+shouldComponentUpdate(nextProps, nextState){
+	/*Este método (el cual debe ser puro) se ejecuta antes de empezar a actualizar un componente, cuando llegan las nuevas propiedades (nextProps) y el nuevo estado (nextState).
+
+Acá es posible validar que estos datos sean diferentes de los anteriores (this.props y this.state) y devolver true o false dependiendo de si queremos volver a renderizar o no el componente.*/
+}
+
+componentWillUpdate(nextProps, nextState){
+	/*Una vez el método anterior devolvió true se ejecuta este método, acá es posible realizar cualquier tipo de preparación antes de que se actualice de la UI*/
+}	
+```
+
+### Introducción llamadas a un API
+Las llamadas a una API siguen un patrón similar siempre que las hacemos, cada llamada consta de tres estados:
+
+Loading: cuando la petición se envía y estamos esperando.
+Error: se debe dejar un mensaje para el usuario para arreglar el error o volver a intentarlo.
+Data: los datos nos pueden llegar de dos formas, o en error o con los datos requeridos.
+
+#### Enviando datos (POST)
+MD5 es una pequeña librería a la cual se le da un texto y ella regresa un hash.
+
+Podremos hacer pruebas para cifrar nuestros textos a md5 en el siguiente sitio MD5 Online
+
+Hola Platzi = d3bfb9302fb1007c0f996b41cba2818c
+
+
+#### Manejando los estados de la petición durante el POST
+De la misma manera en la que se manejan los estados cuando se solicitan datos, deben ser manejados cuando los datos son enviados.
+
+Existe un tiempo entre que se da clic y los datos son enviados. Ese tiempo de espera es necesario visualizarlo. Igual hay que mostrar mensajes de error cuando no funcionan las cosas.
+
+
+#### UI Components y Container Components
+En la programación es bueno separar las tareas en diferentes funciones y en React sucede lo mismo. Cuando un componente hace demasiado, probablemente es mejor dividirlo en dos.
+
+Esta técnica de componentes presentacionales y componentes container es común, útil y hace parte de las buenas prácticas.
+-	 Tener en cuenta
+Hablando de buenas prácticas de programación también se debe considerar el orden de tu código. Un ejemplo de ésto es en los imports, a mí me gusta dividirlos en: Dependencias, Componentes y Assets.
