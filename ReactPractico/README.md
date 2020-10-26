@@ -412,3 +412,62 @@ Solamente hay una fuente de la verdad.
 El estado es de solo lectura.
 Solamente podemos utilizar funciones puras.
 Nuestra UI va a activar una action, esta action va a ejecutar un reducer para modificar la información del store, y al actualizarse el store la UI se va a modificar.
+
+### Instalación de Redux
+Vamos a instalar las dependencias para poder trabajar con Redux:
+```
+npm install redux react-redux --save
+```
+Dentro de nuestro proyecto vamos a crear una carpeta para nuestros actions y otra para los reducers que utilizaremos en Redux.
+
+El paquete react-redux nos proporciona un Provider para poder encapsular nuestros componentes por medio de un connect para poder transmitir la información que necesitemos del store a cada componente.
+
+### Provider:
+Recuerden que se tiene que encapsular nuestra aplicación dentro de un provider, porque nada fuera del provider podrá acceder al store
+.
+El <Provider /> hace que la store de Redux esté disponible para cualquier componente anidado que se haya incluido en la función connect().
+.
+Dado que cualquier componente React en una aplicación React Redux se puede conectar, la mayoría de las aplicaciones mostrarán un <Provider> 'en el nivel superior, con el árbol de componentes completo de la aplicación dentro de él. . Normalmente, no puede usar un componente conectado a menos que esté anidado dentro de un<Provider>.
+
+### Creando el Store de Redux
+Para crear un Store necesitamos llamar a la función createStore del paquete de redux pasándole los parámetros del reducer y initialState.
+
+Para conectar un componente a Redux vamos a necesitar importar connect de react-redux, connect va a aceptar dos parámetros:
+
+mapStateToProps: es una función que le va a indicar al provider qué información necesitamos del store.
+mapDispatchToProps: es un objeto con las distintas funciones para ejecutar una action en Redux.
+
+### Creando los reducers
+Un action de Redux va a contener dos elementos:
+
+type: para indicar la acción que se va a ejecutar.
+payload: es la información que estamos mandando al reducer.
+Dentro de los reducers usaremos un switch para separar la lógica por cada tipo de acción que tendremos en Redux.
+
+
+### Creando un Servicio para Gravatar
+Muchas veces la mejor opción no es descargar un paquete de npm ya que podemos ver la documentación, entender cómo funciona y nosotros implementar el código necesario para nuestro caso, ya que instalar todo el paquete puede volver más pesado nuestro proyecto.
+
+Para nuestro servicio que llamará a Gravatar vamos a crear la carpeta utils y dentro añadir el archivo gravatar.js.
+
+### Debug con Redux Devtools
+Redux Dev Tools nos va a servir mucho para entender mejor el flujo de nuestra información en nuestra aplicación y poder realizar debugging de manera sencilla.
+
+Solamente necesitas instalar la extensión según el navegador que tengas:
+
+Chrome
+Firefox
+Una vez instalado dentro de nuestro index.js vamos a añadir el siguiente código:
+```
+// importamos compose  
+import { createStore, compose } from ‘redux’;  
+...  
+  
+  
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose  
+  
+const store = createStore(reducer, initialState, composeEnhancers
+```
+
+
+RECORDAR GIT https://github.com/manuelojeda/escuela-js-platzi-video/tree/feature/router-redux
